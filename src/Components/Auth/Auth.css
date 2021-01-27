@@ -71,3 +71,46 @@
     justify-content: space-around;
     width: 55%;
   }
+
+  @media(max-width:450px){
+    .auth-container {
+      display: flex;
+      box-shadow: none;
+      background-image: none;
+      padding: 0px;
+      border-radius: none;
+    }
+
+    .auth-input-box > input {
+     position: relative;
+     left: -35px;
+      height: 35px;
+      width: 400px;
+      margin-left: 10px;
+      margin-right: 0px;
+      border: none;
+      padding-right: none;
+      
+    }
+
+    .auth-input-box > p {
+      position: relative;
+      left: -35px;
+       height: 35px;
+       width: 250px;
+       margin-left: 10px;
+       margin-right: 0px;
+       border: none;
+     }
+
+    .auth-button-container {
+      display: flex;
+      justify-content: space-evenly;
+      width: 55%;
+    }
+    .dark-button {
+      justify-content: space-between;
+      position: relative;
+      right: 35px; 
+    }
+  }

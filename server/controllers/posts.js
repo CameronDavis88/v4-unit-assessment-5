@@ -37,9 +37,16 @@ module.exports = {
         }
       }
     },
-    createPost: (req, res) => {
-      //code here
-    },
+    createPost: async (req, res) => {
+      const db = await req.app.get('db')
+      const { id } = req.session.user;
+      const { title, img, content } = req.body
+      const date = newDate
+      if(id)
+      // not sure if this if above really checks for session id to be truthy
+      db.post.create_post(id, title, img, content, date)
+      .then(post => post[0] ? res.status(200).send(post[0]) : res.sendStatus(403))
+  },
     readPost: (req, res) => {
       req.app.get('db').post.read_post(req.params.id)
         .then(post => post[0] ? res.status(200).send(post[0]) : res.status(200).send({}))
